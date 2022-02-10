@@ -24,9 +24,6 @@ def num_of_vowels(s):
 print(num_of_vowels('azcbobobegghakl'))
 
 """
-"""
-
-"""
 Problem #2: 10/10
 
 Assume s is a string of lower case characters.
@@ -40,7 +37,7 @@ For example, if s = 'azcbobobegghakl', then your program should print:
 def num_of_bob(s):
     count = 0
     for i in range(0, len(s)): # prevents IndexOutOfBoundsError
-        substring = s[i:i+3]
+        substring = s[i:i+3] # looks whether three character substring equals bob
         if substring == 'bob':
             count += 1
     return("Number of times bob occurs is: " + str(count))
@@ -72,11 +69,11 @@ def longest_substring(s):
     current = ''
     longest = ''
     for i in range(len(s)):
-        if (s[i] >= s[i-1]):
+        if (s[i] >= s[i-1]): # checks whether following letter is greater than previous alphabetically
             current += s[i]
         else:
             current = s[i]
-        if len(current) > len(longest):
+        if len(current) > len(longest): # updates longest substring
             longest = current
     return("Longest substring in alphabetical order is: " + longest)
 print(longest_substring('azcbobobegghakl'))
